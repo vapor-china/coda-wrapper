@@ -6,7 +6,8 @@ import PackageDescription
 let package = Package(
     name: "coda-wrapper",
     platforms: [
-        .macOS(.v10_15)
+        .macOS(.v10_15),
+        .iOS(.v10),
     ],
     products: [
         .library(name: "Coda", targets: ["Coda"])
