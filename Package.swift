@@ -12,8 +12,13 @@ let package = Package(
     products: [
         .library(name: "Coda", targets: ["Coda"])
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/Quick/Nimble.git", .upToNextMajor(from: "9.2.1")),
+        .package(url: "https://github.com/Quick/Quick.git", .upToNextMajor(from: "4.0.0")),
+    ],
     targets: [
-        .target(name: "Coda", dependencies: [])
+        .target(name: "Coda", dependencies: []),
+        .testTarget(name: "CodaTests",
+                   dependencies: ["Coda", "Quick", "Nimble"])
     ]
 )
