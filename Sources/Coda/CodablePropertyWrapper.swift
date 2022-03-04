@@ -52,15 +52,15 @@ public extension Coda where Value: Codable {
 }
 
 // override  encode
-extension KeyedEncodingContainer {
-    
-    public mutating func encode<T, Value>(_ value: T, forKey key: Key) throws where T: Coda<Value> {
-        var rewriteKey = value.name ?? ""
-        if rewriteKey == "" {
-            rewriteKey = key.stringValue
-        }
-        if let key = CodaKey(stringValue: rewriteKey), let wrappedValue = value.wrappedValue as? Encodable {
-            var container = encoder.container(keyedBy: CodaKey.self)
-        }
-    }
-}
+//extension KeyedEncodingContainer {
+//
+//    public mutating func encode<T, Value>(_ value: T, forKey key: Key) throws where T: Coda<Value> {
+//        var rewriteKey = value.name ?? ""
+//        if rewriteKey == "" {
+//            rewriteKey = key.stringValue
+//        }
+//        if let key = CodaKey(stringValue: rewriteKey), let wrappedValue = value.wrappedValue as? Encodable {
+//            var container = encoder.container(keyedBy: CodaKey.self)
+//        }
+//    }
+//}
